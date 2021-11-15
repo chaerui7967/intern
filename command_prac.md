@@ -95,3 +95,4 @@ grep [OPTION...] PATTERN [FILE...]
 | [문자열 라인 마지막 종료 패턴 검색하기](https://recipes4dev.tistory.com/157#316-문자열-라인-마지막-종료-패턴-검색하기) | `grep "$STR" [FILE]`       |
 
 | https://recipes4dev.tistory.com/157 참고
+
