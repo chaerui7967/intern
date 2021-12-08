@@ -1,0 +1,24 @@
+﻿• 압축
+$ for i in */; do zip "${i%/}.zip" "$i"* ; done
+
+$ for i in */; do for k in `ls $i`; do cd $i; zip "${k%/}.zip" "$k/"*; cd ..; done; done
+
+	• 해제
+$ for i in *; do unar -d $i; done
+
+	• 해제 
+$ for i in *; do a="${i%/}"; unzip -O cp949 "${i%/}" -d "${a%.*}"; done 
+
+$ for k in */; do cd "$k"; for i in *; do a="${i%/}"; unzip -O cp949 "${i%/}" -d "${a%.*}"; done; cd ..; done 
+
+
+
+
+!!! ${i%/} <- 이부분이 스페이스나 이스케이프 문자를 추가 만들어줌
+
+폴더안의 폴더만 삭제
+$ find -mindepth 2 -maxdepth 2 -type d -exec rm -r {} \;
+
+
+여러파일 모으기
+$ for k in `ls`; do mv "$k"/**/*.jpg "$k"/**/*.json merge; done
